@@ -1,0 +1,474 @@
+<div id="padforge-site">
+
+<style>
+/* ===== PADFORGE LIVE - LANDING PAGE BLOGGER ===== */
+
+body, html{
+  margin:0!important;
+  padding:0!important;
+}
+
+#padforge-site{
+  width:100vw!important;
+  max-width:100vw!important;
+  margin-left:calc(50% - 50vw)!important;
+  margin-right:calc(50% - 50vw)!important;
+  font-family:'Segoe UI',Arial,sans-serif!important;
+  background:#050505!important;
+  color:#fff!important;
+  overflow:hidden!important;
+}
+
+#padforge-site *{
+  box-sizing:border-box!important;
+}
+
+.post, .post-body, .entry-content, .blog-posts, .main-inner, .content-inner{
+  max-width:none!important;
+  width:100%!important;
+  padding:0!important;
+  margin:0!important;
+}
+
+.sidebar, aside{
+  display:none!important;
+}
+
+/* HERO */
+
+.pf-hero{
+  padding:90px 20px 100px;
+  text-align:center;
+  background:
+    radial-gradient(circle at center,#ff4f9c22 0%,transparent 58%),
+    linear-gradient(180deg,#070707 0%,#050505 100%);
+}
+
+.pf-logo{
+  width:280px;
+  height:280px;
+  object-fit:contain;
+  border-radius:50px;
+  box-shadow:0 0 90px #ff4f9c99;
+  background:#080808;
+  padding:12px;
+}
+
+.pf-title{
+  font-size:56px;
+  line-height:1.05;
+  font-weight:900;
+  margin:0 0 14px;
+  letter-spacing:-1px;
+}
+
+.pf-title span{
+  color:#ff4f9c;
+}
+
+.pf-subtitle{
+  font-size:23px;
+  color:#e5e5e5;
+  margin:0 auto 20px;
+}
+
+.pf-description{
+  max-width:760px;
+  margin:22px auto 0;
+  color:#bdbdbd;
+  font-size:18px;
+  line-height:1.8;
+}
+
+.pf-badges{
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  flex-wrap:wrap;
+  margin-top:32px;
+}
+
+.pf-badge{
+  background:#111;
+  padding:13px 18px;
+  border-radius:14px;
+  border:1px solid #ff4f9c66;
+  box-shadow:0 0 18px #ff4f9c18;
+  font-weight:700;
+}
+
+.pf-btn{
+  display:inline-block;
+  margin-top:38px;
+  padding:17px 34px;
+  background:#ff4f9c;
+  color:#fff!important;
+  text-decoration:none!important;
+  border-radius:15px;
+  font-weight:900;
+  font-size:18px;
+  box-shadow:0 0 35px #ff4f9c55;
+  transition:.25s ease;
+}
+
+.pf-btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 0 55px #ff4f9c88;
+}
+
+/* SECTIONS */
+
+.pf-section{
+  max-width:1280px;
+  margin:auto;
+  padding:85px 22px;
+}
+
+.pf-heading{
+  font-size:40px;
+  font-weight:900;
+  text-align:center;
+  margin:0 0 50px;
+}
+
+.pf-heading span{
+  color:#ff4f9c;
+}
+
+.pf-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:22px;
+}
+
+.pf-card{
+  background:linear-gradient(180deg,#121212,#0c0c0c);
+  padding:28px;
+  border-radius:22px;
+  border:1px solid #242424;
+  box-shadow:0 0 28px rgba(255,79,156,.08);
+}
+
+.pf-card h3{
+  color:#ff4f9c;
+  margin:0 0 12px;
+  font-size:21px;
+}
+
+.pf-card p{
+  color:#d6d6d6;
+  line-height:1.7;
+  margin:0;
+}
+
+/* SCREENSHOTS */
+
+.pf-screenshots{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(420px,1fr));
+  gap:26px;
+}
+
+.pf-screenshots img{
+  width:100%;
+  border-radius:24px;
+  border:1px solid #ff4f9c55;
+  box-shadow:0 0 32px #ff4f9c22;
+  cursor:pointer;
+  transition:.25s ease;
+  background:#080808;
+}
+
+.pf-screenshots img:hover{
+  transform:translateY(-5px) scale(1.012);
+  box-shadow:0 0 48px #ff4f9c66;
+}
+
+/* ABOUT */
+
+.pf-about{
+  font-size:18px;
+  line-height:1.9;
+  max-width:920px;
+  margin:auto;
+  text-align:center;
+  color:#ddd;
+}
+
+.pf-tech{
+  margin-top:30px;
+  color:#aaa;
+  font-size:15px;
+  text-align:center;
+}
+
+/* LIGHTBOX */
+
+#pf-lightbox{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.94);
+  z-index:999999;
+  justify-content:center;
+  align-items:center;
+  padding:24px;
+}
+
+#pf-lightbox img{
+  max-width:95vw;
+  max-height:88vh;
+  border-radius:24px;
+  border:1px solid #ff4f9c88;
+  box-shadow:0 0 70px #ff4f9c66;
+}
+
+#pf-lightbox span{
+  position:absolute;
+  top:18px;
+  right:34px;
+  color:#fff;
+  font-size:48px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* FOOTER */
+
+.pf-footer{
+  background:#080808;
+  padding:45px 20px;
+  text-align:center;
+  border-top:1px solid #222;
+}
+
+.pf-footer h3{
+  margin:0 0 10px;
+  font-size:24px;
+  color:#fff;
+}
+
+.pf-footer p{
+  color:#bbb;
+}
+
+.pf-footer a{
+  color:#ff4f9c!important;
+  text-decoration:none!important;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+  .pf-hero{
+    padding:60px 18px 70px;
+  }
+
+  .pf-logo{
+    width:120px;
+    height:120px;
+  }
+
+  .pf-title{
+    font-size:39px;
+  }
+
+  .pf-subtitle{
+    font-size:19px;
+  }
+
+  .pf-description{
+    font-size:16px;
+  }
+
+  .pf-heading{
+    font-size:31px;
+  }
+
+  .pf-section{
+    padding:65px 16px;
+  }
+
+  .pf-screenshots{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+
+<section class="pf-hero">
+
+<img class="pf-logo"
+src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi59U6ZbuPdWbAASQX_IlqLkruJsa4BcsMEn1SBUj5tBqc_Rd1e4hR2ISddVrpHDOpC4RrUvLsnCoawxA9ERe1ofPdnU_64xvE3TE63HgnUU-68fdYspLA0kgQtRfhQ3k-BGffTVloxLYJlIAL7pofbbaDzq8pfHef6bWCG9B8nS-HA-3s/s1600/47091.png"
+alt="PadForge Live">
+
+<h1 class="pf-title">Pad<span>Forge</span> Live</h1>
+
+<p class="pf-subtitle">Professional Performance Sampler For Android</p>
+
+<p class="pf-description">
+Transform your Android device into a professional stage-ready sampler.
+Built for drummers, worship musicians, producers and live performers who need
+speed, stability and total control on stage.
+</p>
+
+<div class="pf-badges">
+  <div class="pf-badge">⚡ Ultra-Low Latency</div>
+  <div class="pf-badge">🎛 MIDI Learn</div>
+  <div class="pf-badge">🔁 Phrase Loop</div>
+  <div class="pf-badge">🎹 Performance Mode</div>
+</div>
+
+<a class="pf-btn"
+href="https://play.google.com/store/apps/details?id=com.padforge.live"
+target="_blank">
+DOWNLOAD ON GOOGLE PLAY
+</a>
+
+</section>
+
+<section class="pf-section">
+
+<h2 class="pf-heading">Why <span>PadForge Live?</span></h2>
+
+<div class="pf-grid">
+
+<div class="pf-card">
+<h3>Ultra-Low Latency</h3>
+<p>Fast and responsive audio engine built for live performance.</p>
+</div>
+
+<div class="pf-card">
+<h3>MIDI Learn</h3>
+<p>Connect keyboards, drum pads and MIDI controllers with ease.</p>
+</div>
+
+<div class="pf-card">
+<h3>Phrase Loop</h3>
+<p>Create, record and trigger loops instantly during performances.</p>
+</div>
+
+<div class="pf-card">
+<h3>Advanced Pad Edit</h3>
+<p>Control volume, pitch, reverb, delay, trigger modes and more.</p>
+</div>
+
+<div class="pf-card">
+<h3>Master FX Engine</h3>
+<p>Professional effects designed for musicians and live control.</p>
+</div>
+
+<div class="pf-card">
+<h3>Import WAV & MP3</h3>
+<p>Use your own sounds and build custom kits for your performance.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="pf-section">
+
+<h2 class="pf-heading">Professional <span>Features</span></h2>
+
+<div class="pf-grid">
+
+<div class="pf-card">
+<h3>Performance Mode</h3>
+<p>Designed for live stage use with instant access to critical controls.</p>
+</div>
+
+<div class="pf-card">
+<h3>Multi-Touch Engine</h3>
+<p>Trigger multiple pads simultaneously with a fast performance workflow.</p>
+</div>
+
+<div class="pf-card">
+<h3>Custom Kits</h3>
+<p>Create, save and organize your own sample-based performance setups.</p>
+</div>
+
+<div class="pf-card">
+<h3>Stage-Ready Interface</h3>
+<p>A dark hardware-style interface designed for rehearsals, worship and concerts.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="pf-section">
+  <h2 class="pf-heading">Screenshots</h2>
+
+  <div class="pf-screenshots">
+
+    <img onclick="pfOpenLightbox(this.src)" loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgOIOY_pXfrkOteXVyvbL6aSmRRlu_X8aQPoaoyS3L8NLCVURfjwyY3pY6uLV_IX4cdhfoIQ1-jjRBWpaqRAnD_mEx0stwVoAruhoBy2NkYWmhuRe89bsWBFFRfU3Ct0Kw0U885mw46kN9jFlKSL_wiLPjcqa6ePy8OFrDJVjF7Nbm38vA/s1600/01_Ultra_Low_Latency.png" alt="Ultra Low Latency">
+
+    <img onclick="pfOpenLightbox(this.src)" loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh1kl0vmZGSsCOTrbye1kcWBNs-gMgrQ0BqKra_afPljB5hPO6JhXhEfmJ-kWSg-wBJH1TQbwV9dgKBu9SLUvsgjR8lTA_qKtfOdk_BCSi0OS5sDX-M47RbLcw-nFgO1UrKqL5zlkFGVQXfGUrWde_24fYVpZAtZ4Ma5AHMtT7Jp3hUagM/s1600/02_MIDI_Learn.png" alt="MIDI Learn">
+
+    <img onclick="pfOpenLightbox(this.src)" loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhHIKfK9fSQSBDrc_7cTHQ9gl-jvwsQ3chs8gHK15wSumywO_AWVrsDS9Evt3WKA4MnIZg368SzNvnVTIaCGkwyEDyHpOpdDl-ZZAvk6ka2yRmJzMiuxzqhEzAQVNdlwk6EXES8GdbJ46gg1M4IarYwM2C8Sh3oFwWuW7SVnixbZBrXkrM/s1600/03_Phrase_Loop.png" alt="Phrase Loop">
+
+    <img onclick="pfOpenLightbox(this.src)" loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjjb5nsUw2tTFMA6_y25k_B1dAXLzG0iPvwSTXqmAxuiP-3-pStIoQxILbeOdmiur8HGT3Vx6grrlqcrhtUHEpAdM4O4AEDNGDq7CWQPfeQ1MLyXLgf8rQlAfPI-dIDwY5u6VzsKsvyS_emXTDemp_xFHCpNFW302xnPWlMFWLm_YDq5H4/s1600/04_Advanced_Pad_Edit.png" alt="Advanced Pad Edit">
+
+    <img onclick="pfOpenLightbox(this.src)" loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi9hpZeShZDiFZDbBSMNcYroq1BCRA6bDtqp0yCmPneJILuyRnD6R4RI7D6uuMdHX77C524GHkD_L_lCGFRTpNJNh9DR2VHqNOqJitVO5JuCk_cIK00mZUXL_eDbisSnGDdYmv6Y2EeFHfJYxlXTqZGa9SBh5E5H394foE2sQaciJ3tWkY/s1600/05_Master_FX_Engine.png" alt="Master FX Engine">
+
+    <img onclick="pfOpenLightbox(this.src)" loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjtldQmEJcmFHq6RcITpoNxaYVIagxxod1QGy6zDQmVQfBLoBpIPlnz-oU1i68cloSLalhlvlr3FFT6BwaRenj4p7dkXX__JlC_Xd72FJfvU2hr_QdiD0Xf9e-XPdrcEwXUX7wiogX5sLr9HXrlfsl7_u2G7tIqb2d_GpAVLd3JOmirAUU/s1600/06_Import_Your_Sounds.png" alt="Import Your Sounds">
+
+    <img onclick="pfOpenLightbox(this.src)" loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhABpsoIHmC9SqgvXelcbEPJ5yxng7GMRGO6h9oX6uPk3RBErrg3_0GnznHpWxo66QYBld7nPa-BL_Q7m_mge0OshPs5pyOxL3PdHIACNiNtp6CzysCp4afXi0ZL3jsroW_Duj_vSeLczWKcNGxTvI6LEx-6bUEdB3zxQJ9tdU0NwS2nTQ/s1600/07_Ready_For_The_Stage.png" alt="Ready For The Stage">
+
+  </div>
+</section>
+
+<div id="pf-lightbox" onclick="pfCloseLightbox()">
+  <span>×</span>
+  <img id="pf-lightbox-img" src="" alt="PadForge Live Screenshot">
+</div>
+
+<section class="pf-section">
+
+<h2 class="pf-heading">Built For <span>Musicians</span></h2>
+
+<p class="pf-about">
+PadForge Live was created for drummers, worship musicians, producers and live performers
+who need stability, low latency and total control during rehearsals and concerts.
+<br><br>
+Built with performance in mind, PadForge Live transforms your Android device into a
+professional stage-ready sampler.
+</p>
+
+<p class="pf-tech">
+Built with Kotlin • Jetpack Compose • Oboe Audio Engine
+</p>
+
+</section>
+
+<section class="pf-footer">
+
+<h3>PADFORGE LIVE</h3>
+
+<p>Professional Performance Sampler</p>
+
+<p>
+Email:
+<a href="mailto:aldojose131@gmail.com">aldojose131@gmail.com</a>
+</p>
+
+<p>
+<a href="https://aldojoseoficial.github.io/padforgelive.github.io/privacy-policy.html">Privacy Policy</a>
+|
+<a href="https://aldojoseoficial.github.io/padforgelive.github.io/terms.html">Terms of Service</a>
+</p>
+
+</section>
+
+<script>
+function pfOpenLightbox(src){
+  document.getElementById("pf-lightbox-img").src = src;
+  document.getElementById("pf-lightbox").style.display = "flex";
+}
+
+function pfCloseLightbox(){
+  document.getElementById("pf-lightbox").style.display = "none";
+}
+</script>
+
+</div>
