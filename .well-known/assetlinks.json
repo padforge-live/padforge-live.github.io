@@ -1,11 +1,15 @@
 [
   {
-    "relation": ["delegate_permission/common.handle_all_urls"],
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
     "target": {
       "namespace": "android_app",
       "package_name": "com.padforge.live",
-      "sha256_cert_fingerprints":
-        ["F8:9A:C5:FC:8B:B5:DB:BF:C8:DC:68:DD:E5:0E:88:28:FD:BE:B6:85:E0:A9:3B:02:F0:C7:DC:13:1D:19:F6:4C"]
+      "sha256_cert_fingerprints": [
+        "F8:9A:C5:FC:8B:B5:DB:BF:C8:DC:68:DD:E5:0E:88:28:FD:BE:B6:85:E0:A9:3B:02:F0:C7:DC:13:1D:19:F6:4C"
+      ]
     }
   }
 ]
